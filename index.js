@@ -55,13 +55,13 @@ function draw() // yo function le snake le food khaye pachi segment badhaune kaa
 {
     container.innerHTML ='' //'' -> empty
     snake.forEach(segment =>{
-        const snakePart = document.createElement
-    })
-        const SnakePart = document.createElement("div")
+       const SnakePart = document.createElement("div")
         snakePart.classList.add('snake')
         //mathi ko 2 ota line ko code le dynamically snake bhanne div class banaucha
         snakePart.style.left = segment.x + "px"
         snakePart.style.top = segment.y + "px"
         container.appendChild(snakePart)
+    })
+        
     }
 
