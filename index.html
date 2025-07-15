@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake game</title>
+    <title>Snake Game</title>
     <style>
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
+            
         }
+
         body{
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
+
         #gamecontainer{
             height: 400px;
             width: 400px;
-            background-color: beige;
-            border: 5px solid rgb(219, 187, 59);
+            background-color: #ddd;
+            border: 5px solid black;
             position: relative;
         }
+
         .snake{
             width: 20px;
             height: 20px;
-            background-color: greenyellow;
+            background-color: green;
             position: absolute;
         }
+
         .food{
             width: 20px;
             height: 20px;
@@ -39,8 +43,9 @@
     </style>
 </head>
 <body>
-    <div id="gamecontainer"></div>
+    <div id="gamecontainer">
 
+    </div>
     <script src="index.js"></script>
-    </body>
+</body>
 </html>
