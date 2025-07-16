@@ -6,6 +6,7 @@ const containerSize = 400 //container ko size 400
 let snake = [{x:200,y:200}] // snake center ma bascha
 let direction = {x:0, y:0}  //snake ko direction control garna ko lagi
 let food = generateFood()
+let score = 0;
 
 let gameInterval = setInterval(gameloop,150) //snake ko movement 150ms ko pace le update garcha ani gameloop ma tiyo update rakhcha
 
@@ -36,14 +37,20 @@ function gameloop(){
     //yo position ra direction of addition bhako cha same for y coordinate
     if(head.x<0 || head.x >= containerSize || head.y < 0 || head.y>= containerSize)
     {
-        alert("Game Over")
-        clearInterval(gameInterval)
+        alert("Game Over");
+        clearInterval(gameInterval);
+        score = 0;
+        document.getElementById('scoreboard').textContent = "Score: " + score;
+
         return
     }
     snake.unshift(head)
     //here unshift is a inbuilt fn that shifts the direction of array segment (here,snake is a array)
     if(head.x == food.x && head.y == food.y){
         food=generateFood()
+        score += 1;
+        document.getElementById('scoreboard').textContent = "Score: " + score;  
+
         //food bhaye pachi naya food generate garcha
     }
     else{
@@ -51,6 +58,7 @@ function gameloop(){
         //snake le food nakhaye samma new food generate hudaina(meaning kehi pani hudaina)
     }
     draw()
+
 }
 function draw() // yo function le snake le food khaye pachi segment badhaune kaam garcha
 {
@@ -81,4 +89,7 @@ function draw() // yo function le snake le food khaye pachi segment badhaune kaa
         ///here, Math.floor helps to round off (e.g:5.23->5)
     }
     draw()
+    
+    
+
 
